@@ -40,12 +40,12 @@ class ImageProcessingPlugin: MethodCallHandler {
 
     val result: Bitmap = Bitmap.createBitmap(firstBitmap.width, firstBitmap.height, firstBitmap.config)
 
-    var canvas: Canvas = Canvas(result)
+    var canvas = Canvas(result)
 
     canvas.drawBitmap(firstBitmap, 0f, 0f, null)
     canvas.drawBitmap(secondBitmap, 10f, 10f, null)
 
-    var resultBiteArray: ByteArrayOutputStream = ByteArrayOutputStream()
+    var resultBiteArray = ByteArrayOutputStream()
     result.compress(Bitmap.CompressFormat.PNG, 100, resultBiteArray)
     return resultBiteArray.toByteArray()
   }
