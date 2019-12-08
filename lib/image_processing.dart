@@ -12,7 +12,7 @@ class ImageProcessing {
     return version;
   }
   
-  static Future<Uint8List> CombineImages(Uint8List firstImage, Uint8List secondImage) async {
+  static Future<Uint8List> combineImages(Uint8List firstImage, Uint8List secondImage) async {
     final imageResult = await _channel.invokeMethod('combineImages', <String, dynamic> {
       'firstImage': firstImage,
       'secondImage': secondImage
