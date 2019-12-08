@@ -32,6 +32,10 @@ class ImageProcessingPlugin: MethodCallHandler {
       val secondImage: ByteArray? = call.argument("secondImage")
       result.success(combineImages(firstImage, secondImage))
     }
+
+    if(call.method == "getMessage") {
+      result.success("It's working")
+    }
   }
 
   private fun combineImages(firstImage: ByteArray?, secondImage: ByteArray?): ByteArray? {

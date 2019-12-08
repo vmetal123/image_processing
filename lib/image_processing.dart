@@ -19,4 +19,9 @@ class ImageProcessing {
     });
     return imageResult;
   }
+
+  static Future<String> getMessage() async {
+    final message = await _channel.invokeMethod('getMessage');
+    return message;
+  }
 }
